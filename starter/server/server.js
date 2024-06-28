@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const userRoutes = require('./routes/user-routes');
+
+app.use(cors());
 
 // express middleware, used to be bodyparser
 app.use(express.json());
