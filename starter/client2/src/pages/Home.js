@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('/api/users');
+        const res = await fetch('http://localhost:3001/api/users');
         const jsonData = await res.json();
         const _data = jsonData.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
         setThoughts([..._data]);
