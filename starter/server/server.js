@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const userRoutes = require('./routes/user-routes');
+const imageRoutes = require('./routes/image-upload');
 
 app.use(cors());
 
@@ -23,6 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Use API routes
 app.use('/api/', userRoutes);
+app.use('/api/', imageRoutes);
 
 // Start the API server
 app.listen(PORT, () => console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`));
